@@ -1,0 +1,2087 @@
+> difference you found between talend and AI
+> data parallelism - which components achieve it
+> partition on one key(A) and joining with multiple keys (B, C)
+> multiple outputs from single input in Reformat - which paramter used
+> difference between op index and op indexes
+> performanance wise - lkp vs join which is better
+> 100 rec's ip - 100 rec's op - only 20 recs should go to op - first instance 20 then 20 then 20 till 100
+> difference between sort and sort within group
+1)What are all the components u worked on?
+2)Rollback and phase?
+3)Check in & Check out
+
+INPUT1  
+Media date of listing Market value Sector
+Axis 01-02-00  345    Banking
+HDFC 03-05-99  203    Banking
+Tata 13-09-03  123    Auto
+SBI  30-09-97  300    Banking
+Kia  23-07-05  150    Auto
+
+Media date   New market value
+Axis 9th FEB 2022 1000
+HDFC 9th FEB 2022 950
+Tata 9th FEB 2022 800
+SBI  9th FEB 2022 670
+Kia  9th FEB 2022 450
+Axis 8th feb 2022 800
+HDFC 8th feb 2022 970
+Tata 8th feb 2022 850
+SBI  8th feb 2022 650
+Kia  8th feb 2022 470
+
+Get the new market value for banking and Auto sector
+
+Get the maximum percentage increase in new market value compared to market value for each sector?
+) breif intro about project which you had worked in your previous organisation
+2)dedup sort
+3)what are all the components we used in abinitio
+4)about CDC
+5) id, date sal
+1,23-02-2022,10
+2,14-02-2022,20
+1,26-02-2022,30
+2,13-02-2022,40
+
+using rollup what will we get in date column
+id,sum(sal),date
+1,40
+2,60
+
+6)id, name
+
+1,A
+2,B
+3,C
+4,D
+1,A
+2,B
+3,C
+4,D
+PARTITION THE DATA BASED ON PARTITION BY KEY COMPONENT
+1) Tell all commands in abinitio which you remember.
+2)Difference between gather, merge and concatenate.
+3)if we sort data at different partitions and further use merge to get serial flow. Will we get data entirely sorted or sorted according to partitions.
+4) input table (roll no, marks, subject) we need output as (roll no, sum of marks)
+5)above question but we want all subject id also in same output row for which marks sum is calculated.
+6)we want all roll no, marks and in last line we want sum of all marks. How can we do that?
+7)gave 2 sample tables
+if we perform inner join what will be output 
+If we perform left outer join what will be output
+8)how to see all i/p or o/p file data in Unix shell along with column names.
+> what differences you found between Informatica, Talend and Ab Initio
+> Architectural difference between Informatica and Ab initio
+> basic AI components you worked upon and functionalities of those
+> a. 10 employees - department - count of employess per dept. b. Same above example - dept with highest count of emloyees
+> employee1 10k, e2 20k, e3 15k e4 20k e5 25k e6 NULL, e7 40k. dept wise max salary, if 2 employees have same salary as max then both should come
+> why is it to sort the data first and then go for rollup would be good approach
+> emp table and dept table(d_id, d_name). op expected emp_id, dep_id, dep_name, salary, check_salary.  check_slary 1 or 0. 
+whenever salary is greater than 25k, mark 1 else 0(unknown salary)
+> how do u run graph from frontend and backend
+> how to check in checkout
+> explain about MFS and benefits. more about m_* commands
+> what is control file and data file
+> exercise more on MFS.
+1) If you have to explain what is Ab initio to a fresher than how will you explain
+2) Can we change the order of extract, transform, load if not what is the reason?
+3) Explain what is Sandbox
+4) What types of errors you have gone through in ab initio (syntax errors/graph errors)
+5) About Rollback (first time when graph fails and again when we want to run the graph there a prompt shows regarding that you want to run the graph from starting or from the rollback)
+6) scenarios:
+Emp id      LM id
+1 2
+2 3
+3 4
+4 5
+5 is the CEO
+find the who is the CEO of the company and the least employee in the company.
+7) empid     Gender
+      1              F
+      2              M
+      3              F
+      4              M
+      5             M
+Find the count of male and female employees
+8) empid     Gender    Age                          empid       name
+      1              F            30                              1                A
+      2              M           36                              2                B
+      3              F             48                             3                 C
+      4             M            33                              4                 D
+      5             M            40                              5                 E
+Find a output having empid,gender,age,name
+As 
+Empid     gender      age         name
+3               F                48            C
+5               M               40           E
+Reetika----------------------------
+> what are the directories in sandbox. How project look like.
+> what is a test flag and how it was pointing
+> 3 subjects(one file) - maths, english, history 
+student name, marks, subject
+create 3 files per subject
+avg marks of every student
+> lkp vs join and when each would be used
+> air commands with example
+> launcher agent - how graph executed
+> application of replicate component
+> When you run a graph how it works in backend
+
+Anirudha------------------------
+1) What is Database file called as?
+2) How to get dept id , empid, max salary dept wise ?
+3) How to get maximum contribution dept wise and then which dept have maximum contribution?
+4) Join component
+5) How to connect database?
+
+Lalita Yadav-------------------
+Ø Difference Between Talend and An initio 
+Ø How do u read a file in backend , how do u read a MFS file 
+Ø How do u replace the content of the file in UNIX . Give the syntax
+Ø How do u append a file data . Give syntax
+Ø Difference between Serial and Multifile
+Ø Why is scheduler used and if scheduler is not present how do u run the job 
+Ø Write a query in Sql  - to find the No. of employees joined on a particular date from the following table 
+Emp table – Emp ID, Emp Name , date of birth, date of joining
+
+Manish Dwivedi-------------------------
+Ø Difference between SCD-type 2 and SCD type 3
+Ø Tell me about the abinitio components you have learnt and their significance
+Ø Multifile system and the partitioning components
+Ø Difference between Gather, Merge and Concatenate
+Ø How to replace the content of the file . Give syntax 
+Ø How to print the contents of the above replaced file . Give syntax
+Ø Table containing columns Employee name, Age and Gender . Write sql statements for the below
+• Need the sum of age of male and female 
+• How to delete the nulls in the column employee name 
+Ø How can you remove the duplicates from a file containing 10 columns in UNIX
+Ø In SCD-type 2 whether we will add columns or rows insert the data 
+Ø How to find a file . Give Syntax
+Ø How do u print the 2nd and 4th columns in a file containing 10 columns in UNIX. Give syntax
+Ø What is an EME
+Ø Did u learn about TAG creation. Explain 
+Ø What is your daily activities in previous projects and what do you know about testing 
+
+Divya / Sanyojita / Rakesh--------------------------
+Ø Difference between fact and dimension tables
+Ø What is a p-set in abinitio
+Ø Tell me types of CDC and explain 
+Ø Which table comes first dimension or the fact table
+Ø How do you print 2 columns from a table . Give Syntax
+Ø Which command do you use to search a file in any directory
+Ø Where will you write the dml for the graph
+Ø Explain what you see on the GDE screen
+Ø In how many ways you can create a file in UNIX
+Ø Commands you know in UNIX and their uses
+
+Noyal & Team-----------------------------
+• Difference between OLTP & OLAP
+• SCD Types with examples
+• Types of facts
+• Difference between fact and dimension tables
+• What is orphan record
+• Grep, cd, awk, find
+• SQl Query to give me salary dept and its headquater wise with the data given below
+Emp ID , Emp Name , Location ID, Department ID , Salary ( Employee Table)
+Location ID , Location name , active (Location table)
+Dept ID , Dept Name (Department Table)
+• How can you replace the content of a file using VI editor
+• How do you check out a tag 
+
+Bijoy----------------------------
+• Difference between Talend And Ab initio
+• Types of parallelism with examples in ab initio
+• Explain the following query in a graph:
+Product table containing Product number and product name as columns with 1000 records
+Transaction table containing product number, date and customer id as columns with 50 billion records
+I need an output as Product name , product number, customer id and count 
+Explain each component and transforms you will use in the graph 
+• Explain and write a select statement for the above scenario in sql
+• What is cat command used for 
+• I need to find the word ‘ERROR’ in a file. Which command you use in unix? Give syntax
+• What command you use to change the permissions of a file?
+• What does 1st 7 in chmod 777 means
+
+>what do you know about ETL explain?
+>What is abinito and application of abinito?
+>what is parallelism types of parallelism explain with an example?
+>what is cheakin cheakout?
+>what is json file and how you get data from json file to abinito?
+>unix command 
+1. grep
+2. history
+3. awk
+4. sed
+>what is primary key in a table?
+>what is foreign key in a table?
+>how to perform join in database?
+1) Explain about your previous project and roles you performed.
+2)Explain about snowflake.
+3)Expalin about SCD type1 and SCD type2.
+4)Tell about Agile model.
+5)Explain about joins in SQL.
+6)Difference between Rank and Dense_Rank.
+7)How will you search for a whole word in a file.
+8)How will you serch for matched pattern word only.
+9)What you have learnt in training period and your experience.
+1) How to connect database to abinitio?
+2) What is input file and output file?
+3) Difference between output indexes and output index?
+4) What is rollup and scan?
+5) Types of join?
+6) How to remove first record from a header file in abinitio?
+7) Public sandbox and private sandbox?
+8) To explain a question that you done as assignment during training of abinitio?
+9) What is EME?
+10) What is length function in Normalize?
+11) Air commands
+12) Types of partition?
+13) What is Reject port?
+14) What is abort on first reject and never abort?
+15) Difference between Merge and concatenate?
+16)Next_in_sequence?
+17)In unix simple command to print 10 records?
+18)Checkin
+1.Explain about previous project
+2.SCD TYPE2
+3.CDC TYPES
+4.components you know in abinitio
+5.Record format 
+6.what is the use of partition components
+7.When using SCD types we maintain current data and historical data,
+now how can we retrieve the historiacal data with specific date range using sql
+8.Difference between delete and truncate
+9.How to find the Nth highest salary
+10.Find the salaries of employees who are receiving salary more than manager
+11.Scenario based on join.
+12.How to select records between given range in abinitio
+13.M_commands 
+1. what is subquery, why we use Subquery
+2. Can we use subquery in where clause
+3. what is corelated-query
+4. Types of Joins with example, 
+5. aggregate functions, Group by and having clause
+6. Order of clauses in SQL
+7. Union.
+1. Introduce Yourself
+2. we have two column with Identifier 1 and Identifier 2 and we have to assign tag A and B to the row  if both column is true assign A else B.
+How can we achieve this and how to write condition.
+3. Difference between output index and output indexes. How to write condition in output index and indexes?
+4. What is difference between primary key and primary index.
+5. we want all record from table 1 and only matching record from table 0. How to achieve this?
+6. what is tail command and its syntax?
+7. How to fetch 3rd and 4th column of a file in unix?
+8. What is rank() and dense rank() function?
+1. introduce yourself
+2. what is join in sql
+3. join types all and syntax
+4. what are filtering clauses
+5. having clause
+6. difference between where and having
+7. order of using them
+8. union, union all there difference
+9. subquery
+1. What is the Name of Command to give Permission and write syntax to give Permission of write and execute to file and directory.
+2. What are the commands used to copy,remove,and move the file and Write their syntax.
+3. find the file name start with emp in the current diectory.
+4. Print first or Last 10 lines from a file.
+5. write the syntax of command to Print the Pattern from the file emp.txt
+6. What is star schema, snowflake schema, oltp ,olap and Explain OOP's concept like inheritance and encapsulation.
+7. what are the Phases of Sdlc.
+8. define fact and dimension table.
+9. how to check in and check out from backend.
+10. difference between sandbox.Pset and Project.Pset.
+11.  create graph to get the ouput from any specified input according to demand.
+12. what is the command used to execute the graph in unix.
+13. like we have a file with A,B,and C record in a field and we want to transfer "A" record in first output file and "B","C" record in Second output file.
+so, how we can create a graph for it.
+14. What is Generic graph.
+15. define Rollup ,join and Lookup.
+16. How to graph to validate the data.
+17. how to write dml.
+18. how to create parameter in graph.
+19. what are join-type in join and how to perform left outer join.
+*Introduction
+*What are the components you are aware of in  abinitio
+*In unix we have multiple fields in a file we have to fetch 6 field,which command we use to fetch 6 field from file.
+*If we want to run graph in unix,which command we use to run a graph in the unix
+*We have two sources in abinito one is emp table and one is dept table.
+1)emp table contain employee details that is employee name,dept id,deptnames
+2)dept table contain average salary of each department .In the outcome we want dept name,average salary,no of employees working in a single department 
+what is the skeleton and approach of the graph.
+1)Self introduction?
+2)Roles and Responsibilities ?
+3)Explain SCD types with an example?
+4)Have you worked on SAS?
+5) Agile methodology?
+1. Tell me about yourself
+2. Roles and responsibilities in your previous project
+3. Difference between Mutli -Threading in Talend and parallelism in Ab Initio 
+4. Agile methodology
+5. Performance Tuning techniques
+6. Changes you observed in Talend and Ab initio
+7. Ab Initio components
+
+Round 2
+explain Hadoop architecture (Map reduced, YARN, HDFS)
+difference between structured, semi-structured, unstructured with examples
+what is bigdata and sources of bigdata
+Explain Hadoop ecosystem and what is zoo keeper, oozie, sqoop in hadoop
+overview of HDFS
+explain name node, data node ,block
+what is Map/Reduce
+Are you aware of Spark ,Hive query base processing’s
+how to create sub directories in hadoop
+different Hadoop commands (ls/dir, ls-l, rm  command, getfacl and setfacl, source to destination paths)
+explain put , get commands in hadoop
+Unix commands (Chmod  Operations, cd)
+difference between ls ,  ls -l, ls -lrt, ls -lart in unix.
+>Tell me about yourself
+>Changes you observed in informatica and Ab initio
+>asked about Unix commands and Shell scripts
+>.pset
+>scenario based on pset (repitative logic)
+>question on shedular task
+>on which extension graphs are stored
+1)tell me the which components you used in your training? 
+2)which components used to filter the data?
+3)diffrence between output index and output indexes?
+4)if you have data like 
+id country
+1  India
+2  USA
+3  Germany
+4  china
+5  UK
+
+then how you will the partition this data into 5 different outputfile by countrywise
+
+5)dedup sort and its parametrs
+6)rollup and scan components and its parameters 
+7)difference between rollup and scan
+8)normalise component
+9)lookup component
+10)how many join type in join component
+11)If you use the null key in join component then what will be the output
+12)If you use the null key in partition by key component then what will be the output
+13)what is XFR
+14)which component you used to remove the header and trailer in graph?
+15)How you run the graph in backend
+16)how to do checkin and checkout in backend
+17) how you run the graph in backend
+18)how to convert the serial file into multifile 
+19)what is pset and its parameter
+20)components and its parameters:
+reformat,join,partition by key, partition by roundrobin
+1. How many components you are used in training session.
+2. Air commands
+3. Dot .profile
+4. Which commands do you know in unix
+5. What is index and indexes
+6. Start script and script
+7. Check in and check out 
+8. What is the use of dedup component
+9. Rollup component and scan component 
+10. Left outer join
+11. Pset and project pset ,how to run pset
+12. Departition component
+13. Sub graph
+14. Normalize component
+15. What is packages of rollup component how it works step by step.
+16. Abinitio rc
+17. What is the behavior of rollup component
+18. Key chain functions
+19. How to run graph in backend
+20. How to convert serial file to mfs 
+21. Explain Graph structure
+22. Partition by round robin.partition by key.
+23. What is the use of lookup file
+1. Brief the components worked with? 
+2. What is the internal working of Reformat component?
+3. If we have reformat then what is the use of filter by expression component?
+4. what is the functionality of roll up component?
+5. Difference between roll up and scan?
+6. what are the Data source you covered so far?
+7. How we use input tables?
+8. In oracle how can we get the second highest salary of employee?
+9. Is it possible to take the output file of the graph as the input file to the graph?
+10. Phase and check point?
+11. Air commands? 
+12.Migration from one environment to another environment?
+13.How to create a tag?
+14. What is EME?
+15. what we do before Editing the graph?
+16. What are schedules and what are jobs?
+17. Can we use more than one input to the graph?
+18. can we join one MFS file with one Serial file?
+All the components 
+reformat- diff between output index & output indexes explain with example
+join
+lookup concepts, lookup local
+why we use lookup not join component
+driving input in join
+what is data gathering components like combining components?
+what are de-partitioning and partitioning components
+what concatenate or gather and interleave merge
+string filter_out function
+what is the purpose of roll up, how it is working explain with example?
+what is the different between roll up with null key and roll up with a key?
+scan component
+diff between sort and dedup sort explain some scenarios 
+diff between partition by key and partition by round Robin
+major difference between serial and multifile
+how to create MFS file?
+how to convert single file into MFS file?
+unix M commands, m_cat and m_ls
+air commands
+           What are the components you used in Abinitio?      
+• Scenario, if we have 5 records 1&2 is India,3&4 is Russia and 5 is Russia how will u partition the data as per country
+• Difference between Output index and Indexes
+• How can u remove the header and footer from the file
+• What is DML and what is the use of DML
+• What is XFR
+• Senario IP File: 1-1-2022,400(Date, sal)
+•                            1-1-2022,200
+•                             1-1-2022,300
+•                            2-1-2022,300
+•                           2-1-2022,200
+•                           2-1-2022,400
+•                          I need top two records from each grp
+• Are you aware of output select function or packages in scan
+• Run time behaviour of rollup
+• In dedup sort, if i choose null key what will be the output?
+• Have you used normalise component explain?
+• How to convert serail file to mfs file?
+• I have serial file how to convert in to MFS four way partition?
+• Are you aware of layout of the component?
+• I want to convert four way mfs to serial layout, how can we achieve this?
+• Departition components explain?
+• Air commands
+• How to create tag?
+• How you migrate code from one env to another env?
+• Are you aware of m_dump command?
+• I want to select 15-75 records from a file what is the command?
+• m_dump command?
+• How to run pset from the backend?
+• .abinitio rc
+• what is EME?
+• Are u aware of the join component?
+• Rollup,scan,join,lookup
+• dbc file
+• copy command in unix?
+• Commands you know in unix?
+• Global Parameters
+Self introduction
+What are the projects you have worked on and explain.
+What are the challenges you have faced in project.
+How do you migrated the code?
+Questions regarding testing in talend?
+Questions regarding error handling in talend?
+Explain continuous flow in Abinitio in detail?
+Join component performance while applying sorted input as true for unsorted data.
+Unix commands, chmod
+In which case we use star schema/snowflake schema?
+1.what are the components do you know in abinitio
+2.explain about sort component
+3.explain about rollup component
+4.explain about reformat component
+5.inner join query, full outer join query
+6.next in sequence function
+7.do u aware of unix
+8.have you implemented self join
+1.About previous project
+2.Rollup Component - Scenario- if key =Null which record will get to o/p?
+id  column
+1
+2
+3 
+ 4
+5
+
+3.Reformat -order of execution
+4.what is difference b/w phase and checkpoint
+5.join-scenario(inner,left-outer)
+tableA  tableB
+1  1
+1  1
+1  1
+2  1
+2  2
+3  2
+3  2
+4  3
+  3
+  3
+
+6.what is sort - scenario- what is the o/p?
+id  Name
+1 rakesh
+1 abhi
+1 sai
+
+7.what is Max-core :scenario - 1gb ,12 mb , which one will first execute?
+
+8.reformat-scenario-10 records : next_in_sequence >5 , what is o/p?
+
+9.reformat - scenario - 3 records - a,b,c,Null - o/p?
+if(in.name == a :1; 
+ else 0;)
+10.how to create a tag in unix ?
+Join scenario (inner join,explicit join,full outer join)
+
+File 1 File2
+1 1
+1 1
+1 1
+1
+1
+======================================================================================================================
+
+Input file having 3 fields namely A,B,C given to partition by key(A,B)--->sort(A,B)----IN0 of Join(A,B)
+
+partition by key(A,B)--->sort with in group major key A,minor key B---->in1 of join(A)
+
+Have you got desired output or not..??
+====================================================================================================================
+
+rollno,sub1(marks),sub2(marks),sub3(marks)---->required 2nd & 3rd highest marks for each subject
+============================================================================================================
+
+how to find 2nd highest salary in each dept--> in SQL
+============================================================================================================
+
+how to create a tag
+===============================================================================================================
+
+how to change the version of an existing tag
+==================================================================================================================
+
+how to migrate the code from one environment to another environment
+=================================================================================================================
+
+difference between two versions
+===================================================================================================================
+1. About previous project
+2. Which graph have design
+3. Diff  b/w gather and concatenate
+4. How to move a file to another file.
+about your self and project
+=============================================================================================================
+difference between scan & rollup??
+==============================================================================================================
+Runtime behaviour of Reformat??
+==============================================================================================================
+difference between output index and output indexes??
+==============================================================================================================
+how to migrate code from one environment to another environment??
+1. When you joined in Capgemini
+2. What is your previous organization
+3. What is your passed out year
+4. In which project your are worked on previous organisation
+5. What is your role in there
+6. What is your day to day activities in previous organisation
+7. How many days you worked on your previous organisation
+8. Have you designed any graphs on Ab initio
+9. How can you run a graph in back end
+10. Have you knowledge on Unix
+11. Previously you have working experience on Unix
+12. What is your current location
+13. Are you willing to relocate to Pune
+1. You have input file containing records of 3,1,2,5 and need a output of 5,2,1,3 by using Talend
+2. Write a query for 11th highest salary
+3. Asked a questions on inner join, Left outer join and right outer join 
+4. How can you load the 30 to 40 tables at a time in Talend.
+5. How can you replace a word in a file, whick command is used
+6. How can you create a tag
+7. Have you knowledge on air commands
+8. You have work experience in Unix
+9. What is your previous project
+10. Have you work on Ab initio
+11. What are the components you aware in Ab initio
+ABINITIO>>>
+1)Difference btw output index and output indexes?
+2)In which component o/p index and o/p indexes exist?
+3)Difference btw reformat and filter by expression?
+4)If we have fullname,how u can divide it into firstname,middlename and lastname?
+5)Why are you shifting to abinitio?
+6)Explain about normalize?
+7)Have u worked with any client for abinitio role?
+8)How are you practicing,u have to login to any VDI or it installed in your system?
+
+UNIX>>>
+1)Explain about versions?
+2)How will you migrate code to  one environment to another environment?
+3)Can u tell me what are the commands you aware in unix?
+4)What is the usage of sed command?
+
+SQL>>
+1)write innerjoin query?
+2)Query for deleting duplicates?
+3)Difference btw delete,drop,truncate?
+
+>>
+1)Explain about yourself?
+2)Roles and responsibilities in your previous project?
+3)Explain about agile methodology?
+4)What scheduler have you used?
+5)For deploying job which tool have you used and explain about the environment of the tool?
+6)You have mentioned that you have worked on scd types,explain about scd type1 and type2?
+7)Shift timings of your previous project?
+8)Have you worked only weekdays or have you worked on weekends if required?
+9)In our project it is required to work on weekends also,are you ok with it?
+          1.Previous experience details about my project
+          2. What’s your learned in Ab initio training
+          3.What are the components your aware
+          4.Did you built any graphs
+          5.what is usecase of the graphs
+          6.are you okay with testing
+What are the components do you know abinitio?
+Explain the scenarios you have achieved using reformat component?
+Order of execution of parameters in reformat component?
+Explain about rollup component?
+Explain about sort component?
+Explain about Normalize component?
+Explain about layout in component?
+Explain about partitioning and departitioning components?
+check in and checkout from GDE & dependency analysis?
+Talend and Abinitio difference
+Tag creation and code migration to higher environments?
+kill 9 command?
+Top command?
+How to print the 5th line in unix?
+How to change the time stamp of a file?
+Inner join & full outer join queries
+Introduction
+Project Explanation
+Scenarios in reformat component, parameters in reformat
+Scenarios in rollup
+100,1000 
+100,1000
+101,2000
+102,3000
+101,1000
+102,4000
+Scenarios in filter by expression, 100 records all are '1' how filter by expression work for 1=1,
+Scenarios in Join, inner Join
+100,1000 
+100,1000
+101,2000
+102,3000
+101,1000
+102,4000
+Scenario in Partition by Key
+100,1000 
+100,1000
+101,2000
+102,3000
+101,1000
+102,4000
+Explain about Normalize component.
+Talend vs abinitio difference.
+Unix commands.
+• What are the components You worked with.
+• What are partition and Departition Components.
+• Like the partition components what others we have.
+• Which component breaks the Pipeline Parallelism and How.
+• Why we use Partition Components.
+• What is the Function of Rollup.
+• Explain the Partition and Departition Components.
+• What is the process of execution in Reformat component.
+• If we give the conditions in both the Output Index and Output Indexes means what will happened.
+• If we have 5 records with same name and 3 records with different name using Roll up means How many output records we will get.
+• If we take input file Filter By Expression, reformat component and output file, can we optimize the graph with less flows and How and what will it be.
+• What are the Flows in graph.
+• How we will use Serial and Multi Files in Partition and Components.
+• For MFS Files Can we give cat and display the files.
+• How to create a Tag.
+• M commands You know.
+• How can we display the Files in Particular format in Unix.
+• What is the Use of M_Dump.
+• Introduction
+• Did u worked on unix in any previous projects?
+• Did u worked on any database ? which database?
+• How many experience u have in sql?
+• Architecture of A>I.
+• What is the function of EME?
+• A file contains 40gb. Then that file will present in EME or not?
+• Difference between Reformat and Filter By Expression.
+• What will be the output if we keep a null key in Join.
+• What will be the output if we keep a null key in rollup.
+• What will be the output if we keep a null key in dedup sort.
+• What is .profile and what is abinitio RC?
+• Are you heard about consent plan?
+• In Input file a column having full name. In o/p I need first, middle & last names are required In 3different columns.
+• In I/P file 10 records are there. I need only 5th & 10th record. How will u get this?
+• There are millions of records in I/P file. How can u capture the every 5th and 10th line.
+• Do u aware of string scenarios in A>I.
+• What is the use of String_substring?
+• How u do the project setup?
+• How to use WC in Unix.
+• Do u know about awk command? Explain the one scenario.
+• How do u print the manager word by using awk command.
+• Explain any scenario except list command?
+• Write a query to find the duplicate records in SQL. Write a query in chat.
+• Where we use where condition and having condition?
+• A table having Emp_id & dept_id, I need dept wise  number of employees . Write a query in chat
+• How to find second highest salary ? write a query in chat.
+• Are you intrested  working in additional hours and Weekends?
+• Why you are shifting From your Background to Ab Initio.
+• Explain How you implemented scd type 2 in talend?
+• Which scheduler you used in previous project? Explain about it?
+• Introduction
+• What are the components You worked in Ab Initio.
+• Tell me the Difference between Output Index and Output Indexes.
+• Difference between Reformat and Filter By Expression.
+• What is the Process in Partition By Round  Robin and can we take any number of outputs.
+• What are departition  Components.
+• Have you Implemented any graphs using Departition Components.
+• Do you Know about Gather.
+• How you Migrate the code to any other Environment.
+• How to Create a Tag.
+• How Can I see Your Graphs in My environment.
+• What is the Command for Check-In a graph from back end.
+• What happened if we keep a null key in Join.
+• What happens if we keep a Null key in dedup sort.
+• Did You hear about SCP command in Unix.
+• SFTP Full Form.
+• How to use WC in Unix.
+• Which Database you have used so Far.
+• How to display the duplicate values in SQL.
+• Tell me the query If I have a Roll Numbers 1 to 100 and there is a department column. I want to display the Number of Persons in each department.
+• Why you are shifting From your Background to Ab Initio.
+.Introduction?
+.project explanation?
+.diff b/w fact and dimensional tables?
+.we have employee table in that we have emp address col where it will be stored in fact or dimensional table?
+.how the fact and dimensional are releted?
+.what is the conformed dimensional?
+.what is factless fact table?
+.diff b/w star and snowflake schema?
+.how to read the data in Ab initio?
+.what is the use of dml?
+.if we dont give dml what happend?
+.what is reformat component?
+.what is the use of select parameter in reformat?
+.we have i/p file with 100 records in select parameter we have next in seq>1 what is the output?
+.what about sort component?
+.what is rollup?
+.in rollup if we have null key  what will be output?
+.In rollup explain template mode and expanded mode?
+.diff b/w scan and rollup?
+.how to get the header of the file in unix?
+.how to remove the header of the file?
+.how to remove the footer?
+.how to find length of the string?
+.We have file with 10000 records we have to print 100 records of file how it?
+.we have a file with pipe delimeter we want to get the last col from the file how will get?
+.col A,col B,col C............ how to print last col?
+.what is the use of awk command with example?
+.how to print 100th record of file?
+.dhanalakshmi is replace with Anil ban which command you use?
+.how to remove duplicates from oracle?
+.there is a emp table we have col emp id,name,country write a query whose name start with letter b?
+.what are the joins in sql?
+.what is the cross join?
+.diff b/w primary key and unique key?
+.write a query if i want to sort the data in descending order in emp table?
+.what is the diff b/w union and union all?
+.what is minor query?
+.what is the diff b/w group by and having?
+.what is the diff b/w table and view?
+1)Introduction?
+2)What have you learned in abinitio?
+3)Explain about SCD types?
+4)Brief about implementation of scd type2?
+5)Why we use partitions?
+6)joins in ab initio?
+7)Do you know about shell scripting?
+8)Have you done check in check out of the graph?
+9)Query to find count of records?
+10)Query to identify the duplicates?
+11)How you will read the file contents?
+12)Have you created plan?
+13)How you read the data in table in abinitio?
+14)Can we sort the data in sql?
+15)If we have no delimitor how you write dml and how you will read the data?
+14)After check in of graph to modify it first what you have to do?
+15)You have worked on abinitio for 3 years, are you comfortable to change abinitio?
+1. Introduction 
+2.explain briefly what you done previously and which organization 
+3. explain your previous project 
+4.what is dimension table
+5.what is fact table 
+6.fact vs dimension 
+7.explain star schema 
+8.explain scd types
+9.explain implementation of scd type 2
+10.what is your roles and responsibilities 
+11.what do u learned in abinitio 
+12.rollup component 
+13.join component 
+14.how to remove duplicate, query 
+15.index Indexes
+16.what is definition of lart 
+17.sed command
+18.find command
+19.error handling
+20what is confirmed dimension 
+21.m_dump command uses
+22. Do u have any questions to ask
+1. Introduce yourself.
+2. What is reformat component
+3. If input file have 100 records, in reformat select parameter we give Next_in_sequence>1  what will be the output and why
+4. If input file have 10 records, in filter by expression select parameter give 1==1. What is the output
+5. If input file have 10 records, in filter by expression select parameter give 1==0. What is the output
+6. What is rollup
+7. If input file have 10 records, In rollup key parameter set to null what is the output
+8. You have knowledge on scan
+9. Have you aware join
+10. What is max core
+11. What component you find max core parameter
+12. Difference between max core and max memory
+13. Difference between output index and output indexes
+14. What are joins in Ab initio
+15. Scenario an joins
+16. Are you aware on air commands
+17. How to create tag
+18. What is use of “-exact”
+19. How you check in the graph in backend
+20. What is use of “-basedir”
+21. How lock the graph in back end
+22. How can you remove the header 
+23. How can you remove the footer
+24. How to print 50 to 70 records in file
+25. How to print last column in a file
+26. What is m_dump
+27. How to get id 1, 2,3,4 records by using m_dump
+28. What m_rollaback
+29. Query for removing duplicates
+30. Difference between Delete and Truncate
+31. How can I permanently delete record after using Delete command
+32. Difference between Truncate and Drop
+33. What is indexes in Sql
+34. Difference between unique key and primary key in constraints
+35. How to create a table
+1)When you have joined in CG?
+2)Explain about Ab initio .rc?
+3) Explain about plan?
+4) Explain about pset?
+5) Explain about rollup?
+6) Explain about scan?
+7) Explain difference between output index and output indexes?
+8)Explain about joins?
+9)How to print 5th field in unix?
+10)Can you replace your name with othername in unix?
+11) Explain about SCD types?
+1.what is .abinitiorc?
+2.what is pset?
+3.what is rollup and scan?
+4.what is manage connection?
+5.If we have i/p file 1 2 3 4 5 6 7 8 8 1 by using dedupsort remove the duplicates?
+6.what is plan?
+7.which command is use for diff two files?
+8.diff b/w scd type 1 and type2?
+9.command for doing checkin?
+• What is Ab Initio rc file.
+• What is the Manage connections.
+• Using Dedup sort remove the duplicates for 1 2 3 4 5 6 7 8 8 1.
+• What is pset.
+• What is plan.
+• What is Rollup.
+• What are SCD types.
+• Command for doing Checkin.
+• What happens if we do export.
+• Do you interested In Testing.
+• Do You Know about Hdfc, Hive.
+• What You are aware about Ab>I.
+• What is the difference between RollUp and Scan.
+• Give an example using RollUp.
+• What are the Components You are aware in Ab>I.
+• Did you done any testings in Ab>I.
+• What is the use of reformat.
+• Difference Between Output Index and Output Indexes in Reformat.
+• What are the parameters in Rollup.
+• Are you aware of air commands.
+• What is Sandbox.
+• Tell me What are the air commands you know.
+• Why we use Tag.
+• How to do checkout using air command.
+• What was the extension you give to save a graph.
+• What is .xfr.
+• Do you about MFS.
+• How you enable EME connections.
+• Which database you worked with.
+• What is the version of oracle you worked.
+• What is the difference between UNION and UNION ALL.
+• How to get the 10th highest salary from the table employee.
+• A table as 1,0,Null,-1,Null and B table as 0,1,2,Null,-1,-2,Null What will be the output for Inner Join.
+• Write a query for LeftJoin.
+• Joins.
+• Multiple File Components.
+• How much you know about Unix.
+• How to display a Files above 30MB.
+• How to display lines 15 to 20 and 25 to 30 in unix.
+• Why you are shifting to Ab>I.
+1.introduction
+2.brief on your projects
+3.error handling
+4.what kind of unit testing u have done
+5.udate and insert 
+6.null and not null 
+7.source to target count testing
+8.about unix
+9.length of string
+10.to replace which command you are using
+11.about grep command
+12.file content in unix
+1.how many years of experience?
+2.explain your previous project?
+3.scd type2 implementation?
+4.do you aware of Abinitio components?
+5.explain join component in scd type2?
+• Brief indroduction.
+• Difference between fact and dimension Table.
+• Star schema and snow flake schema.
+• Scd types.
+• Example of scd types.
+• OLAP and OLTP.
+• How you are aware about unix.
+• File1:
+1
+234
+555
+fdsfvdfv
+bbbb
+@#$!)&*^
+            command to arrange values in a file in descending order.
+• tell me the command to list all the file and folder available in a directory arranged in reverse order with respect to time. And it should include all your hidden files as well?
+• File name : test.txt
+error
+Error
+error
+ERROR
+            how do you find a string - error irrespective of it's case in unix?
+• file1 :
+1
+234
+555
+fdsfvdfv
+bbbb
+@#$!)&*^
+            how to print last line of file
+• How to create a file using echo.
+• copy the employee table data to employee_hr table for department=HR
+• Write down query to give me number of records who are not tagged to any department
+• dept table
+• dep id   dept name 
+10        ABC
+20        DEF
+30        GHI
+40        JKL
+50        MNO 
+• emp table 
+• emp id    emp name   dep id
+1           A           10
+2           B           10
+3           C           20
+4           D           30
+5           E           40
+6           F           50
+7           G           50
+• need output with dept name and count of employee in each department
+1.indroduction
+2.starschema snowflake schema
+3.scd types
+4.explain scd type 2 implementation 
+5.example of fact less fact table
+6.OLAP VS OLTP
+7.list of object in sample.tag
+8.test. dml news it.dat
+9.m dump command
+10.fact vs dimension 
+11.file name log.txt, error,ERROR,Error,error
+Which command u use write full in chat 
+12. Why turned into abinitio 
+13do u have any questions to ask
+1.introduce what u have done previously 
+2.when did you joined CG
+3.fact vs dimension table
+4.scd types explain
+5.what do u learned in abinitio 
+6.explain rollup
+7.difference between rollup and scan
+8.reformat component 
+9.output index output Indexes
+10.what is the parameter of filter by expression 
+11.explain parallelism in abinitio 
+12.how do u enable eme connections 
+13.what is abinitio rc
+14.sandox pset vs project pset
+15.checkin checkout from backend 
+16.which database u r worked earlier 
+17.how to get 10th highest salary from Employe table
+18.how about you in unix
+19.how to display lines from 15 to 25
+20.how to display sige of above 60 mb file
+21.what is 777 in chmod
+1.self introduction
+2.how comfortable using Abinitio?
+3.you worked in reformat?
+4.diff b/w output index and output indexes?
+5.do you aware of lookup?
+6.diff b/w lookup and join?
+7.what are frequently used unix commands?
+8.how do create multi file in backend?
+9.do you aware of partition component?
+10.diff b/w prr and pbk?
+11.do you aware of departition components?
+12.are you comfortable with sql commands>
+13.write a query for 3rd highest sal?
+1)Self introduction?
+2)Are you interested in testing?
+3)What you have learned in abinitio?
+4)Difference between Rollup and Scan?
+5)What happens if we give 99 in select parameter in filter by expression?
+6)what happens if we pass null key in rollup?
+7)what happens if we pass null key in scan?
+8)Difference between Output index and Output indexes?
+9)Explain about partition by RR and partion by key?
+10)Explain about interleave?
+11)What is the use of check in and check out?
+12)Command for check out from unix?
+13)Find the files which are of 100 days ago and remove them?
+14)Replace ram with shyam after the 5th occurrence?
+15)Replace ram with shyam in all places?
+16)Print only 10th column in a file?
+17)Write a query  to find the 10th highest salary? 
+18)Write a query to delete duplicates?
+19)Have you gone through any interview for Barclays?
+20)After completion of work what will you do?
+21)Have you done testing before?
+22)What are your hobbies?
+23)What is the ongoing cricket series?
+24)What is the result of first match?
+1)Self introduction?
+2)What do you know about PL SQL?
+3)What are the unix commands you have used?
+4)Which database you have used?
+5)Are you ok to learn new tool if required?
+1.indroduction 
+2.what are dimension types
+3.explain scd2
+4.what is fact and dimension 
+5.what you know in abinitio 
+6.types of parallelism in abinitio 
+7.how to display fist 10 lines and last 10 lines in unix
+8.how do u list out the recent files in unix
+9.what is vi and cat
+10.explain grep
+11.if your team member done wrong while developing, what do u do
+12.do u have any questions 
+1.what background you are
+2.how about u on abinitio 
+3.difference between rollup and scan
+5.how about u in unix
+6. How do u list files
+7.mdump command ,grep
+1.what are done previously 
+2.what kind of projects u have done
+3.what is your previous organization 
+4.when did u joined in CG
+5.how good in abinitio 
+6. Types of parallelism in abinitio 
+7.difference between scan and rollup 
+8.joins where and having  
+9. How many days u got training on abinitio 
+1.difference bw output index , output indexes with example
+2. segeragate the age , sinior citizen into one flow, other people into one flow
+3.H|2021-01-01
+B|abc,10,2021-10
+B|def,11,2021-09
+B|xyz,12,2021-08
+T|10   , How to read this  
+
+4.How to read only Header, Trailer and Body seperately.
+
+5.How Rollup works, diff bw scan and Rollup
+6.what mean by Never abort and abort on first rejection
+7. what you worked on AWS
+8. How Normalize will work 
+9.How to compare body records with trailer records
+10. How to fetch first 10 lines
+11. How to fetch last 10 lines
+12. one example for grep command
+13.which compoenet will work same as Reformat.
+14. How to define depth in Read HDFS compoenent.
+15.How to read fixed length dml.
+16.what is driving port 
+17.what type of joins we can see in join
+18.How explicit join will work
+19.which partition will work to distribute the data equally
+20.how partition by key work
+21.worked on Partition by expression in real time?
+22.if we use explicit join , wich parameters get added there
+1. SED
+2. Filter by expression
+3. Join, Rollup, Scan, Sort, Dedup sort
+4. Driving port
+5. lookup, lookup local
+6. find all the words in the column ending with abc using unix
+7. emp salary greater than manager salary using sql
+8. find particular pattern files using unix
+1.introduce about you.
+2.explain your previous project
+3.how many of years of experience in abinitio
+4.what did you learn in abinitio
+5.why talend to abinitio and whats is the differences you observed
+6.do you know salesforce 
+7.explain rollup component
+8.partition by round robin
+9.departion components
+10.how do you get the data from servers
+11.how long you got training in abinitio
+12. if I give a chance how  much time you need to perfect
+13.i am done from my side do you have any questions to ask
+1. explain about your project roles and responsibilities
+2. Any knowledge on unix?
+3. How to read a file in unix
+4. How to edit the file in unix
+5. How to find duplicates for a emp in sql
+6. Have you worked on any testing projects before?
+7. did you worked on how to load the tables ?
+1.explain what you have done previously
+2. what is fact and dimension
+3.what is rank ,dense , row 
+4.how do you load the data in talend
+5.what did you learned in abinitio 
+6.what about unix
+1. difference between rollup and scan
+2. what are partition and departition components
+3.explain partition by round robin
+4.require output as per customer id and per item scenario
+5.how to remove header and trailer records
+6.m_dump command usage
+7.difference between output index and output indexes
+8.join parameters
+9.what all components you know in abinitio
+10.list down few air commands
+11.without join component how you perform inner join
+12.how to remove duplicate records
+1.introduction
+2.project explain
+3.when you did your MSc after that what u have done
+4.what did you learned in abinitio 
+5.explain rollup and reformat
+6.join scenario
+7.how do you replace word in unix
+8.grep command
+9.talend vs abinitio 
+10. do you have any questions
+1. How much I know regarding AB initio, Unix, SQL
+2. My previous projects
+3. Partition by key component
+4. all the components I know in AB initio
+5. How much I will rate myself in AB initio & Unix
+1. Output index & output indexes
+2. Join & lookup
+3. Types of join & scenario regarding that
+4. nested query in SQL
+5. Port fields from the data in UNIX
+1. Components I'm comfortable with
+2. Check-out
+3. Output index and output indexes
+4. Diff between roolup & scan
+5. EME
+6. Remove duplicate records usinf abinitio
+7. Dedup sort
+8. Sort component
+1. About my myself
+2. What all I know in AB initio
+3. SQL queries ( using HAVING, ORDER BY, GROUP BY)
+4. Unix ( FIND, GREP)
+5. Project I did in my graduation
+6. What did I do using Qlikview
+7. What challenging scenario I faced while working on AB initio
+1.what is your roles and responsibilities 
+2.how was your abinitio training
+3.what are the components do you know
+4.explain rollup and scan  difference
+5.how about unix what do you know
+6.to replace which command you use
+>About my tenure in past company.
+>Details about project.
+>Components that I have learnt in training on Ab Initio.
+>Reformat and its parameters.
+>Tell me about Lookup File.
+>Types of Joins,  join parameters and what happen to data when we do Inner join for non-matched records.
+>Roll and Scan component and its uses.
+>Scheduling tools and its monitoring.
+>SCD types and about SCD type 2 working and usage.
+>Partitioning in Ab Initio and its components.
+>Difference between concatenate, merge and gather.
+>Why Round robin used mostly.
+Self- Introduction
+Previous Employment- Exp Roles and Responsibilities 
+Unix Commands(Sed Awk Grep And Air Commands)
+Ab Initio Concepts 
+Components like Roll up, Look up ,scan, Transform ,Join and Normalize
+Max Core Value, Driving port 
+Psets and  Plans
+
+Join Types of Joins
+
+Look Up Functions,
+
+SQL Topics 
+Data Ware Housing Concepts 
+
+Ab Initio Scenarios,
+Architecture of Ab Initio
+Role of Co-op system in Ab Initio
+Dependency Analysis (Brief)
+How do you connect the EME to Ab  Initio Server 
+Difference between Look Up file and Look up Function in Ab Initio 
+Types of Parallelism used in Ab Initio
+Sort Component ,Reformat,Aggregates
+Ded up and Replicate Component 
+Partition Components 
+
+Air Commands in Ab Initio 
+Roll Up Component 
+Syntax for m_dump in Ab Initio
+1. Can you Introduce Yourself.
+2. Can you explain your previous project.
+
+Data Ware House & ETL:
+1. How you will check whether the I/P file received is not Duplicate/Previous record.
+2. How you will get source daily (Which Format - Table or File) .
+3. How will you process data daily (batch wise or real time.
+4. How you will load your data in to data ware house .
+Santhosh:
+1. If file has not came on particular day how will your mapping works
+2. What is the Purpose of event wait and email task
+Sai:
+1. Can you explain the flow how you will map your input to the output
+
+SQL :
+1. What are types of Joins ,Can you explain.
+2. What the difference between Full Outer Join & Union
+3. How to convert Date to string or String to date.
+4. Do you know about Select Case.
+Santosh:
+1. what is stored procedure
+2. what is view 
+Sai:
+1. What is a Having Clause.
+2. What are Aggregate Functions.
+
+Unix :
+1. How to find a particular String in a file .
+2. How to find a file In a directory.
+1.Introduce Yourself (previous exp and Projects).
+2.Difference between Reformat & FBE.
+3.Explain about Normalize Component.
+4.I have a one file, Remove Header, Trailer and Body Part Separately.
+5.I have a input file of 100 records, i need 10 records in each file.
+6.Explain about Performing Tuning Techniques
+7.What are the Different Components you know in Abinitio
+8.Explain about M-Commands?  and what is m_dump, m_Partition.
+9.Explain Air Commands and tell me commands for Check in, check out, creating tag, List the versions and tags, Differences between two versions.
+10.Loading Methods In Output Table and Differences between them (Api,Utility)
+11.how to Migrate/Deploy code.
+12.where you will get Requirement, how will you develop and migrate it.
+13.which scheduling tool you are using.
+14.Do you have exp in Production Side.
+15.what is the queries for Removing and finding Duplicates
+16.Wht is Fact and dimension tables and difference between them
+17.Explain about SCD types ,differences between them
+18.expalian about SCD type2 in abinitio
+19.what are the commands you know in UNIX.
+20.I have  file of 100 records, i want to print 10-15th records. 
+1.Differences between Output index & Indexes?
+2.Differences between Rollup & Scan?
+3.Explain about Normalize component?
+4.what is Next-in-Sequence?
+5.what happened when we pass null key in Rollup & Scan?
+6. what is lookup file and explain?
+7.i have two inputs  ino  in1      what would be the inner join?
+                      1       2
+       2        3
+1 1 
+8. I have a input file  ABCD , I want to print output as    A   which component is used to get output?
+                                                                                    B
+                                                                                         C 
+                         D    
+9. what is output table 
+10. Differences between SCD type1,2,3 
+11. what are the components used in scd1 graph?  what is the usage of trash component
+12. Second highest salary Query
+13. What is DBC file and what DBC file contains
+14. I have a input file of 100 records i want to print 1 to 3rd records
+• Tell me about yourself.
+• Explain about project which you had worked in your previous organisation.
+• What is ETL and what is Ab initio.
+• What are all the components u worked on?
+• What is reformat component.
+• What is wrapper script in Ab initio.
+• What is CDC process in Ab initio
+• What is Rollup and scan components and how it works.
+• Difference b/w rollup and scan components.
+• What is Plan.
+• Tell me the commands in which you have worked on unix.
+• Scenario question on unix command – how to replace vidya by Jadhav.
+• Sql scenario question – how to find 7th highest salary.
+• Sql scenario question – write a query to find distinct emp salary.
+• Ab initio scenario question- you have some data in input file then how you find that data in reverse order.
+• Ab initio scenario question – table 1 (1 million data) table 2 (1000 records) then in how many ways you can join the table.
+• Ab initio scenario question – table 1 (1 million data) table 2 (1000 records it is 4 way MFS) then how can you join the table.
+• Ab initio scenario question – in input file 250 records you have to fetch only 150th record to output file.
+• Ab initio scenario question – in input file 250 records in 4 way MFS and you have to fetch only 150th record to output file.
+• Tell me about yourself.
+• Explain about project which you had worked in your previous organisation.
+• What are all the components u worked on?
+• What is reformat component.
+• What is output index and output indexes explain with examples.
+• Tell me the commands in which you have worked on unix.
+• Scenario question on unix command – how to replace suyash by vidya in 1st occurance.
+• Explain grep command, how to display specific word.
+• How to delete 5th line from file in unix.
+• How to delete last line from file in unix.
+• How to delete 2nd last line from file in unix.
+• Difference between tmap tjoin.
+• What is difference between lookup and lookup match.
+• What is star schema.
+• What is dimension table and explain types of dimensions.
+• What is fact table and its types?
+• Types of joines in talend.
+• What is SCD. What is types of SCD.
+• Difference between SCD1 and SCD2. 
+• Explain SCD2 with example.
+• Ab initio scenario question- 
+Input-                                       output-
+Country      city                      Country      city                      
+India            MP                      India            MP,MH,HP
+India            MH                      US                NY,chicago
+India            HP
+Us                NY
+Us                Chicago
+
+• Ab initio scenario question- 
+Input file-  Id    marks                 lookup file    id    name                    
+                     1        90                                         1       vidya
+                     2        30                                         2       suyash
+                     3        60                                         3       nisarg
+                     4        70
+What will be the output.
+
+• Ab initio scenario question –
+Input file-    1           2            3                            
+                     10      name      mahesh                                    
+                     20       name     priyanka                                  
+                     10       age         25                             
+                     20       age         30
+
+output 
+                   Id           name       age
+                  10          mahesh      25
+                                 20         priyanka     30
+             What we have to perform to get this output.
+• Tell me about yourself.
+• Explain about project which you had worked in your previous organisation.
+• What are all the components u worked on?
+• What is reformat component.
+• What is output index and output indexes explain with examples?
+• Tell me about awk command?
+• Scenario question on Unix command – how to replace harshit  by agrawal in 3rd occurrence.
+• How to use Subtract in sql?
+• How to seggregate file with multiple header and footer in Unix/Abinitio.
+• Explain Dummy table in sql?
+• What is grep -q used for?
+• Sed command extension to delete a line in file with matching string?
+• What is DWH?
+• What is star and snowflake schema?
+• Types of Dimensions and facts in DWH?
+• What is scd1 and scd2?
+• Dense rank and rank in sql?
+• rollup component usecase?
+• Difference between redefine format and reformat?
+• Explain checkin and check out?
+• Ab initio scenario question-
+Input-                                       output-
+Country      city                      Country      city                     
+India            MP                      India            MP,MH,HP
+India            MH                      US                NY,chicago
+India            HP
+Us                NY
+Us                Chicago
+
+• Highest salary using rank?
+• Ab initio scenario question –
+convert ball vs run data to over vs run data
+1> Introduction about candidate.
+2> Tell me Brief about project(in depth discussion, Daily task, Responsibilities).
+3> Difference between touch and Cat command.
+4> How to find particular file in system ==> Find Command.
+5> Find command and Grep major difference.
+6> Oracle Sequence and partition concept.
+7> About Oracle.
+8> Deployment process.
+9> Difference between Union and Outer join.
+10> Tell me about types of data you handled and Files.
+11> How to promote application from one environment to another.
+Tell me about yourself
+Your educational Qualifications
+What are the components you have trained
+What is partition components and deportation components
+UNIX commands
+sed 
+grep
+cat command its uses
+What is DWH and its topics
+Facts and dimensions
+Star schema and snowflake schema
+SCD types
+third highest salary in SQL
+He is asking Tivoli scheduling tool.
+1) What is AI_TEST_FLAG, AB_PLAN_LOOP_CURRENT_VALUE
+2) What is resource pool?
+3) Suppose I have input file with 100 records flowing through FBE with select as “(1+1)==2”, what is expected output ?
+4) Which is the simplest component that can drop fields apart from reformat and redefine format?
+I have 4 fields in input file and want 2 fields in output file. 
+
+5) I have an transaction file with below details, i want sum of debits and sum of credits for an account in a day
+Input file : 
+Account number | transaction type | transaction amount | date
+123 | debit | 40 | 20230501
+123 | credit | 0  | 20230501        
+123 | debit | 45 | 20230501
+
+Output file :
+Account number | sum of debits | sum of credits | date
+123 | 85 | 0 | 20230501
+
+6) Can you provide solution to below scenario : 
+Input : 
+Bangalore | Chennai | 130
+Chennai | Bangalore | 130
+Mysore | Lucknow | 700
+Calcutta | Delhi | 500
+Delhi | Calcutta | 500
+
+Output :
+               Bangalore | Chennai | 130
+Mysore | Lucknow | 700
+Delhi | Calcutta | 500
+
+7) Build a generic graph . Consider I have a file having header, body and trailer.
+6a . First separate the header , body and trailer in to different flows.
+6b . Do header validation i,e date in file should be same as transaction date
+6c . take the body count and compare it with trailer data, which is trailer validation.
+
+Note , input file doesn’t have records identifier as H,B,T
+Input files : 
+File 1 : 
+H|20230227
+B|rajesh
+T|100
+
+File 2 : There are no body records, but you generic graphs should execute successfully as trailer count is 0
+H|20230227
+T|0
+
+8) Suppose I have 100 tables to be unloaded , build a plan to unload 10 tables at a time.
+9) Print last but one column data using unix commands
+      1|2|3|4
+      2|3|4
+      3
+      4|5|6
+     5
+     7|8|9|10|11
+1.Self intro, previous project, etc
+2.components I have worked on
+
+3. .profile
+4. .abinitiorc
+5. what is .rec
+
+6.How can we get this o/p from ritwik
+r
+
+i
+
+t
+
+w
+
+i
+
+k
+
+
+7.How to print the position of the char in a given word
+
+ 
+
+I have a input like:
+Column_name:
+Indicator
+YNNYYN
+NNNYYN
+YYYYYN
+NNNNNN
+
+ 
+
+REQUIRED O/P:
+Where the Y is present in a given string, i want position of the string with CONCATENATE of P Letter. 
+
+8.reformat runtime behaviour
+reformat all parameters
+output index and indexes difference
+
+9.max_core value of join and rollup
+10.m_commands
+11.rollup 
+12.Normalize component
+13.air commands
+14.m_dump command 
+finding -start and -end data
+
+15.what will be the output of rollup having 4way MFS while we provide key = NULL
+16.string functions - is_blank()
+data-->
+17.date()
+18.
+19.
+data-->
+ritwik
+yash
+Kumar
+
+find blank data/null data
+
+20. filter by expression
+1. Tell me About yourself?
+2. Tell me about your projects?
+3. What components you Trained in Abinitio?
+4. Run time behaviuor of sort component?
+5. What is rollup and scan?
+6. Difference between rollup and scan?
+7. What is difference between reformat and filter by expression?
+8. What is lookup? Difference between lookup and join?
+9. How to find 2 Nd highest salary in Abinitio?
+10. How to find 2 Nd highest salary in SQL?
+11. What is SCD and explain its types?
+12. How to implement SCD type 2 in talend?
+13. What is difference between WHERE and HAVING?
+14. Tell me about ETL? What is DWH? Explain the process?
+15. Did you worked on Hadoop?
+16. Types of schema? Difference between star schema and snowflake schema?
+17. Difference between Drop Delete Truncate?
+18. What is DDL DML DCL?
+19. What is rank dense rank difference between them?
+20. What is difference between group by and having?
+21. In Input file wh have records 1 – 100 I output we want in two different file in one file all even records and in another file all odd records.
+22. Question
+Table 1          Table 2
+1                         1
+1                         1
+1                         1
+1
+Howmany no of records present in 
+left outer
+right outer
+full outer
+inner joins
+
+23. Question
+Input
+Name   gender   state                                       
+Vidya   F             MH
+pooja   F             MH
+Vijay    M            HP
+Prafull M           MH
+Aarti    F             HP
+Output
+Statewise male female count ? which key  you will give in talend and in abinitio?
+
+
+24. FIND and Delete Duplicates SQl Query ?
+25. What is primary key, foreign key ?
+26. Difference between primary key foreign key? What is surrogate key? What is candidate key?
+27. What is join? How many types of join there are in SQL? Explain each?
+28. Difference between join and union?
+29. How to find name vidya from the file? 
+30. We want all the file except file which include vidya?
+31. what means of -o in grep command?
+32. how to find specific file in unix?
+33. how to find file which we have make 30 days back?
+34. how to delete 1 to 5th record from file?
+35. How to print only 5th and 7th records from file?
+1) Do you know CDC , what is SCD type 2
+2) How do you run a script in backend , what is nohup. 
+3) Difference between truncate and delete
+4) what is cksum?
+
+5) I have an input file as below : 
+Acct_no | Cust_no | cust_name | cust_adress
+1111 | 101 | A | xyz
+1111 | 102 | B | qrt
+1111 | 103 | c | rty
+
+I want vector data of customers for an account
+Acct_no | customer_details
+1111    | Cust_no | cust_name | cust_adress
+                101  | A | xyz
+                102 | B | qrt
+                103 | c | rty
+                               
+
+I have an input file as  below
+consider a customer has 1000 initial balance , we want to generate balance at each transaction.
+Cust name | transaction type  | transaction amount | Balance
+X         | debit             | 1000               | 0
+X         | credit            | 500                | 500
+X         | credit            | 500                | 1000
+X         | debit             | 500                | 500
+1) What is AI_TEST_FLAG, AB_PLAN_LOOP_CURRENT_VALUE
+2) What is resource pool?
+3) Suppose I have input file with 100 records flowing through FBE with select as “(1+1)==2”, what is expected output ?
+4) Which is the simplest component that can drop fields apart from reformat and redefine format?
+I have 4 fields in input file and want 2 fields in output file. 
+
+5) I have an transaction file with below details, i want sum of debits and sum of credits for an account in a day
+Input file : 
+Account number | transaction type | transaction amount | date
+123 | debit | 40 | 20230501
+123 | credit | 0  | 20230501        
+123 | debit | 45 | 20230501
+
+Output file :
+Account number | sum of debits | sum of credits | date
+123 | 85 | 0 | 20230501
+
+6) Can you provide solution to below scenario : 
+Input : 
+Bangalore | Chennai | 130
+Chennai | Bangalore | 130
+Mysore | Lucknow | 700
+Calcutta | Delhi | 500
+Delhi | Calcutta | 500
+
+Output :
+               Bangalore | Chennai | 130
+Mysore | Lucknow | 700
+Delhi | Calcutta | 500
+
+7) Build a generic graph . Consider I have a file having header, body and trailer.
+6a . First separate the header , body and trailer in to different flows.
+6b . Do header validation i,e date in file should be same as transaction date
+6c . take the body count and compare it with trailer data, which is trailer validation.
+
+Note , input file doesn’t have records identifier as H,B,T
+Input files : 
+File 1 : 
+H|20230227
+B|rajesh
+T|100
+
+File 2 : There are no body records, but you generic graphs should execute successfully as trailer count is 0
+H|20230227
+T|0
+
+8) Suppose I have 100 tables to be unloaded , build a plan to unload 10 tables at a time.
+9) Print last but one column data using unix commands
+      1|2|3|4
+      2|3|4
+      3
+      4|5|6
+     5
+     7|8|9|10|11
+1) I have a csv file with 100 fields eg : cust_id, cust_name, product_details , product_cost, etc
+These fields are not in same order in the file which comes daily from partner.
+Day 1 : cust_id, cust_name, product_details , product_cost, etc
+Day 2 : product_details, cust_id, cust_name, product_cost etc.
+
+Design a graph to pick only cust_id and product_cost from this csv file always.
+
+2) Source file has date in format “3/04/2023”, how will you convert to proper date format “DD/MM/YYYY”?
+3) Read files of same format from a directory and create 1 output file.
+Eg : customer_20230501.dat, customer_20230502.dat, customer_20230503.dat etc.
+            b) Read files of same format from a directory within date range (20230501 to 20230505)  (clue : fetch date from file and filter on it)
+
+4) I have a 4 way partitioned file in server 1 and I want to copy to another server which is 8 way partitioned, how will you do it?
+5) What is .abinitiorc?
+6) Difference between sandbox and project pset.
+7) What are looping concepts in plans?
+8) How will you mentioned resource pool in a plan.
+9) How to read XML file?
+10) What is dependency analysis, can you mention components that will break lineage.
+11) I have an input file with below details.
+Country_Name | Transaction_id | customer_id
+
+What is the issue with below graph? Is it well structured?
+I/P file -> reformat - > sort - > FBE - > PBRR - > Rollup(Country name) to get total transaction amount
+12) I have an mfs file with 1M records with fields (product details|product cost | customer details)
+And I have a serial lookup file with (product details | product description)
+What is the best way to build a graph?
+1.Tell me about your self ?
+2.Tell me about your previous project ?
+3.how to get fullname along with space from input file its having firstname and lastname in abinitio
+4.difference between output index and output indexes?
+5.how to split all states into different files in abinitio ?
+6.difference between scd type1 and type2 and type3 ?
+7.how to implement scd type2 in abinitio ?
+8.how to implement scd type2 from day1 ?
+9.how to get firstletter only capital rest all are capital ?
+10.what are string functions you aware of ?
+11.what are the m_commands you aware of ?
+12.what are the date functions you aware of ?
+13.have you worked on data analysis and data leanage ?
+14.what are the joins perform by using join component?
+15.if you having unsorted data how will you perform join ?
+16.difference between diff and comparison command in unix ?
+17.sort the record and find uniq records and delete duplicate in unix ?
+18.how to find 100 days back file and delete it ?
+19.difference between star schema and snowflake schema?
+20.how to delete parent key values without daleting the child table values ?
+21.what if foreign key ?
+22. difference between ddl and dml commands in sql ?
+23.EME in abinitio ?
+24.difference between filter by key and filter by round robin ?
+    Tell me About yourself?
+    What components you Trained in Abinitio?
+    About Filterbyexpression and Reformat?
+    About output index and output indexes in Reformat?
+    About never abort,force_error and force_abort?
+    About dedupsort if we pass null key?
+    check in and check out  
+    how to run the job at the backend?
+    how to know versions of object?
+   m_expand?
+  About normalize?
+which component we have to use If we have 100 records at input how will get 1lakh records?
+12.input1 ->
+1
+5
+1
+NULL
+15
+input2 ->
+5
+5
+1
+20
+NULL
+100
+How many no of records present in
+leftouter
+right outer
+full outer
+inner joins
+
+In Filterbyexpression if we pass values 100,0 what is output?
+14)Emp_Name|department|Salary
+Nikhil|xyz|30000
+Pankaj|pqr|40000
+Ankita|pqr|60000
+Sushil|xyz|80000
+how to get 2nd highest salary in abinitio?
+
+product_name|cust_ID
+Pencil|100
+Pencil|200
+Pencil|300
+Pen|100
+Pen|500
+Pen|600 
+Pen|700
+how we will get max cust_id for pen?
+
+About driving parameter in Join?
+About scd type2?
+About delete and truncate in sql?
+
+UNIX
+sed
+grep
+1. Self intro & about the previous project. 
+2. The components that I’ve worked on. 
+3. About Roll up component. 
+4. Parameters of Reformat. 
+5. About Normalize component. 
+6. Max core of JOIN components. 
+7. Check in and check out. 
+8. About m_cmds and Air_cmds, that we know. 
+9. Sandbox and EME. 
+10. SQL- Having , where clause. 
+11. Delete and truncate. 
+12. DDL, DQL & DML. 
+13. Joins and its types – SQL. 
+14. Scenario based questions in Unix – On sed cmds. 
+15. Other Unix cmds that I have worked on. 
+16. Previous project questions – Git, Azure databricks notebook & scala. 
+Tell me About yourself?
+Tell me about your DataStage projects?
+What components you Trained in Ab initio?
+Run time behavior of filter by expression?
+join and roll up parameters?
+what happened if null values passing into roll up what will be the output?
+what happened if null values passing into scan what will be the output?
+How to convert serial file in to multifile?
+How to find 2 Nd highest salary in Ab initio?
+Tell me what components used in implementation of SCD type 2 in Ab initio?
+M_Rollback command?
+How many no of joins present in join Component?
+How to remove header and trailer record in Ab initio?
+Order of Execution in Reformat?
+
+SQL:
+
+Write a SQL Query to find Third highest salary?
+Table 1  Table 2
+1        1
+1        1
+1        1
+1
+How many no of records present in 
+left outer
+right outer
+full outer
+inner joins
+
+Table 1    table 2 
+name        name
+Madhu       Madhu
+mounica     vidya
+vidya       Harshith
+
+How to delete Harshith record in a table?
+
+FIND and Delete Duplicates SQl Query ?
+
+
+UNIX
+
+sed 
+grep
+awk 
+find 
+cat commands
+There is a customer related data with one primary and multiple secondary customers, we need to produce the output like one primary account with
+
+atleast 3 secondary customers for each account 
+
+expalin about multistage transform function in Rollup
+
+Exmaple on Rollup Expanded package
+
+can we define global variables in expanded rollup
+
+There is a file with date parameter and this is shell interpred parameter, due to this, we are getting warnings while check-in, how to fix it. 
+
+what is the sort component mechanism, how the merge files will work
+
+how to set a max core value if the process is running in 4-ways parallel
+
+what is the diff bw the parameter with exported and without exported to the environment
+
+What is non equi join
+
+what is rank and dense-rank 
+
+diff bw full-outer and cross-join
+
+how to write a shell script for house keeping
+support & dev exp segregation asked by Gowtham
+opening the graph - from scratch dev
+explained his profile well
+Informatica vs AbInitio comparison - how A>I will prove better than Informatica - answered on parallelism - dynamic artifact generation - volume of data
+PBE vs FBE
+Optimizing the graph without knowing why the existing graph is built that way - MFS - avoid using multiple Sort
+IP file(transaction) - RFMT - Sort - FBE - Scan - PBRR - RLP(total transactions per country) - MFS - issue with the designs - (PBRR answered) (FBE at start of graph, answered) (partitioning data earlier answered)
+Data skewing impact on above if PBK is used - okish
+cust id, transaction id, product purchased, etc - it is MFS partitioned on cust_id - lkp has product id, product deatils, product description - 10 million in input, 10 in lkp - lkp_local on hint he agreed
+FBE - (1+1)==10 - 1==-1 - answered right
+1|10|3 (avging based on no of non empty columns) - answered vector and all
+1|2|
+1||
+||
+adding/removing columns without using refomrat and redefine format - FBE answered
+component folding - not clear
+10k records - 10 record every minute - throttle - unanswered - he gone for process/script - throttle
+design a genaric graph - header detail and traler records - filname, fileTS (H)- Trans id, trans amt, DorC (D) - Total C amt, total D amt, total transaction (T) - do header and trailer validations - answered on conditional dml - explained approach(rlp null key) - answered partially
+1
+0
+5
+-1
+9
+8
+Output
+8
+9
+-1
+5
+0
+1
+10,2 vs 10.2
+$# vs $?
+factless facts
+1.Tell me about yourself
+2.How to Display records between 50-75 in ab initio
+3. There are 100 rec --> 4way mfs,if you use Roll up then how many outputs it will give you.
+4. 
+Input:
+1
+2
+3
+4
+5
+next_in_sequence() >=2 and next_in_sequence <=4
+What is the output ?
+
+5. inp -- ritwik
+output:
+r 
+i
+t 
+w 
+i
+k
+6. how to convert 4 way to 2 way MFS
+1.Tell me about yourself
+2.What components you have learnt in the training.
+3.Runtime behavioral of Reformat
+4.what is check-in and check-out. Give syntax for check-in 
+5.Relationship between Co>operative system,EME,GDE
+6.What are Air commands available in Ab initio
+7.How to replace rithvik with satish in all occurrences in a file ?
+8.What is Max_core? why it is used.
+9.join 2 data set
+1    1
+1    0
+1    0
+2    1
+0    1
+1    0
+What is the output for inner Join
+10.How to Display records between 50-75 in ab initio
+11.How to distribute 100GB file into 10 file of 10 GB each file.
+12.There are 100 rec --> 4way mfs, if you use Roll up then how many outputs it will give you.
+13. 
+Input:
+1
+2
+3
+4
+5
+next_in_sequence() >=2 and next_in_sequence <=4
+What is the output ?
+14.
+inp -- ritwik
+want output:
+r
+i
+t
+w
+i
+k
+15. How to do version comparison using air command .Give syntax
+1 What are the Components that break Data Lineage?
+2 How do you resolve lineage breaks?
+3 How do you create reource pools
+4 How do you drop fields without using reformat and redefine reformat?
+5 How to drop fields using meta Programming?
+6 what is the Significance of   .. in .. ab_project.ksh .
+7 "Where will records go when we give :-
+A+B == A+B in FBE
+(A+B) == A+B in FBE"
+8 "I/P:-                                               O/P:-
+Ban     Chn      600                       Ban   Chn  600
+Chn     Ban      600                       pune hyd  1000
+Pune   Hyd     1000                     Mum Goa  3000
+Hyd     Pune   1000
+Mum  Goa     3000
+Ban     Chn     2800"
+9 How to copy multifile from one server to another server? What are all the steps that we need to check before?
+10 what are all the methods available in plans
+11 How can we make our subplan run in serial/parallel loop?
+12 "i/p  --> sort --> Reformat --> FBE --> PBRR --> Rollup --> MFS
+This is the flow of the graph. Is this the best approach to calculate the sum of transaction amounts for each country in a input file."
+13 In the above Scenario if the file size is big How to achieve in best possible way?
+14 Have you ever worked on Hadoop Component?
+15 How to import an object from unix to control centre?
+16 "I/P:- 
+1 | 2 | 3
+   | 2 | 3
+1 |    | 
+   |    |
+
+with this input How to get the average of sum of not null fields?"
+17 How to read json data?
+18 How to call API's in AbInitio?
+19 How to remove duplicates from a table?
+20 If we don't know the primary key How will you remove 
+21 Difference between Api  mode and utility mode?
+22 What kind of constraint failures we may get in utility mode?
+23 What is factless fact table and give some examples?
+24 "I/P:-            O/P:-             O/P:-
+10 | 3            10 | 3 | 13     10 , 3 , 13
+11 |2            11 | 2 | 13     11 , 2 , 13
+12 |3            12 | 3 |15     12 , 3 , 15
+14 |5            14 | 5 |19     14 , 5 , 19
+How to achieve above in unix?"
+25 What is significance of  #!/usr/bin/ksh   in shell script?
+26 What are these $? ,  $# , $@ 
+27 What is the error if tdset and dml are not in same sandbox?
+1) Data warehouse basics : schemas, data mart.
+2) What you learnt  in Hadoop, hive
+3) Name some component Talend you practiced?
+4) SCD types and explain?
+5) How to implement scd type 2 in abinitio ort talend?
+6) Port of join components?
+7) Does update or insert which comes first in scd type 2 implementation. 
+8) On which phase update come in abinitio? 
+9) Phases and checkpoints?
+10) What is importance of checkpoints?
+11) Suppose I have 10 graph in dev environment and I want to know where its checkpoints given?
+12) Do you know toggle checkpoints?
+13) How to remove .rec fille from unix?
+14) Save file in unix/eme ?
+15) What are types of hive table in unix?
+16) Suppose I have input file with 16 records and with partition by round robin given to 4way mfs and then connected to filter by expression with condition by next_in_sequence()==1 ? what will be the output?
+17) With same above scenario we have and I am giving condition as invocation_number()==1? What will be the output?
+18) How to create vectors?
+19) Suppose I have folder and inside I have 30 file and 10 files have akash and 20 file don’t have akash name in it. How to find output as “file name have akash in it” another output statement will be like “file name don’t have akash in it” how to follow this process and get output sequentially?
+20) Basics commands you know in unix?
+21) When to use SED?
+22) Suppose I have file with 10 row of records and I wanted to print 2nd time occurrence of akash in that file how to identify 2nd time only that word?
+23) With same above scenario I have and from 2nd line onwards I want to search the word and print how to achieve?
+24) How to shift from one environment to another environment?
+25) Do you know tags and its importance?
+26) Rollup and scan difference?
+1. Introduction
+2. Roles & Responsibilities
+3.Air commands - checkin and tag creation
+4. What is sandbox and EME
+5. How will you unlock an object which locked by others.
+6.Scenario on Balls and runs 
+7. How to get 2nd highest salary from department table in A>I and SQL
+8. I/P abc and want O/P cba 
+9. What is m_dump 
+10. There is a file with 10000 records out of which I want to print only 50 - 100 records .
+11. What is Roll-up and Scan
+12. How to remove header and trailer part from a file.
+13. Difference between sandbox.pset and project .pset
+14. What is .profile file and .abinitiorc file
+15.How will you list the objects in a tag .
+16. What is parallelism and types .
+17.What is DBC file 
+18.How will test the DBC file 
+19. How to find and delete files which are created 30days ago.
+20.input file with 
+       1
+       2
+       3
+       4
+       5 
+If I pass 0 value in select parameter of FBE what the output is .
